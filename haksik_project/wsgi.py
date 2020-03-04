@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 import os, sys
 
 sys.path.append('/home/ubuntu/haksik_project')
-sys.path.append('/home/ubuntu//myvenv/lib/python3.5/site-packages')
+sys.path.append('/home/ubuntu/myvenv/lib/python3.5/site-packages')
 
 from django.core.wsgi import get_wsgi_application
 
