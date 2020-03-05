@@ -45,8 +45,8 @@ def message(request):
     info_fp.close()
 
     for i in range(11):
-        if meal_list[i] == '\xa0' or meal_list[i] == '\n\n':
-            meal_list[i] += '\n학식이 없는 날이거나 홈페이지에 등록되지 않았습니다.'
+        if meal_list[i] == '-':
+            meal_list[i] = '\n학식이 없는 날이거나 홈페이지에 등록되지 않았습니다.'
 
     add_text = ''
     for j in range(10):
@@ -75,7 +75,7 @@ def message(request):
             'template': {
                 'outputs': [{
                     'simpleText': {
-                        'text': info_list[1]+"\n테스트 성공입니다."
+                        'text': info_list[1]+"\n테스트 성공입니다.\n"+meal_list[0]
                     }
                 }],
                 'quickReplies': [{
