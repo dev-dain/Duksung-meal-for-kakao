@@ -19,17 +19,14 @@ def message(request):
     wday_arr = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
     go_main_button = '초기화면'
     today_wday = localtime().tm_wday
+    
     meal_path = '/home/ubuntu/haksik_project/haksik/week_meal.txt'
     # open에는 full 경로 설정 필수
     meal_fp = open(meal_path, 'r', encoding='utf-8')
 
-    temp_list = []
-    for line in meal_fp.readlines():
-        temp_list.append(line)
     temp_str = ''
-    for line in temp_list:
+    for line in meal_fp.readlines():
         temp_str += line
-
     temp_str = temp_str.strip('\n')
     meal_list = []
     meal_list = temp_str.split('\n\n')
@@ -38,13 +35,9 @@ def message(request):
     info_path = '/home/ubuntu/haksik_project/haksik/week_info.txt'
     info_fp = open(info_path, 'r', encoding='utf-8')
 
-    temp_list = []
-    for line in info_fp.readlines():
-        temp_list.append(line)
     temp_str = ''
-    for line in temp_list:
+    for line in info_fp.readlines():
         temp_str += line
-
     temp_str = temp_str.strip('\n')
     info_list = []
     info_list = temp_str.split('\n\n')
@@ -82,7 +75,7 @@ def message(request):
             'template': {
                 'outputs': [{
                     'simpleText': {
-                        'text': "테스트 "+info_list[1]+"성공입니다."
+                        'text': info_list[1]+"\n테스트 성공입니다."
                     }
                 }],
                 'quickReplies': [{
