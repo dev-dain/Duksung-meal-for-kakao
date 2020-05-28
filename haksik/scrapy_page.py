@@ -45,7 +45,7 @@ def go_crawl():
 
     url = 'http://www.duksung.ac.kr/diet/schedule.do?menuId=1151'
     options = get_options()
-    driver = webdriver.Firefox(options=options)
+    driver = webdriver.Firefox(options=options, executable_path=r'/home/ubuntu/geckodriver')
 
     try:
         html = get_html(driver, url)
@@ -56,10 +56,10 @@ def go_crawl():
     info_str = get_info(target_table)
     meal_str = get_meal(target_table)
 
-    meal_fp = open('week_meal.txt', 'w', encoding='utf-8')
+    meal_fp = open('/home/ubuntu/haksik_project/haksik/week_meal.txt', 'w', encoding='utf-8')
     meal_fp.writelines(meal_str)
     meal_fp.close()
-    info_fp = open('week_info.txt', 'w', encoding='utf-8')
+    info_fp = open('/home/ubuntu/haksik_project/haksik/week_info.txt', 'w', encoding='utf-8')
     info_fp.writelines(info_str)
     info_fp.close()
 

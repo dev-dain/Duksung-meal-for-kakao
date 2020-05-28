@@ -46,7 +46,7 @@ def go_crawl():
 
     url = 'http://www.duksung.ac.kr/diet/schedule.do?menuId=1151'
     options = get_options()
-    driver = webdriver.Firefox(options=options)
+    driver = webdriver.Firefox(options=options, executable_path=r'/home/ubuntu/geckodriver')
 
     try:
         html = get_html(driver, url)
