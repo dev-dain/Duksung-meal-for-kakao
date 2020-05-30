@@ -38,10 +38,10 @@ def get_meal(target_table):
     return meal_str
 
 def go_crawl():
-    if os.path.exists('week_meal.txt'):
-        os.remove('week_meal.txt')
-    if os.path.exists('week_info.txt'):
-        os.remove('week_info.txt')
+    if os.path.exists('/home/ubuntu/haksik_project/haksik/week_meal.txt'):
+        os.remove('/home/ubuntu/haksik_project/haksik/week_meal.txt')
+    if os.path.exists('/home/ubuntu/haksik_project/haksik/week_info.txt'):
+        os.remove('/home/ubuntu/haksik_project/haksik/week_info.txt')
 
     url = 'http://www.duksung.ac.kr/diet/schedule.do?menuId=1151'
     options = get_options()
